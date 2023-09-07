@@ -8,20 +8,23 @@ const refs = {
     dataHours: document.querySelector('[data-hours]'),
     dataMinutes: document.querySelector('[data-minutes]'),
     dataSeconds: document.querySelector('[data-seconds]'),
-
 }
 
-console.log(refs.dataSeconds);
-
-const options = {
+flatpickr(refs.dataInputEl, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
+    onClose(selectedDates) {
+        const diffData = selectedDates[0] - Date.now();
+        if (diffData <= 0) {
+            alert('Please choose a date in the future');
+            refs.startBtnEl.disabled = true;
+            return;
+            
+        }
+        refs.startBtnEl.disabled = false;
     console.log(selectedDates[0]);
   },
-};
-
-flatpickr(refs.dataInputEl, options);
+});
 
