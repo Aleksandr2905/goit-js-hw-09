@@ -3,7 +3,21 @@ function getRandomHexColor() {
 }
 
 const refs = {
-    btnStart: document.querySelector('[data-start]'),
-    btnStop: document.querySelector('[data-stop]'),
+    startBtnEl: document.querySelector('[data-start]'),
+    stopBtnEl: document.querySelector('[data-stop]'),
     
 }
+
+refs.startBtnEl.addEventListener('click', event => {
+  refs.startBtnEl.disabled = true;
+  refs.stopBtnEl.disabled = false;
+  intervalId = setInterval(() => {
+  document.body.style.backgroundColor = getRandomHexColor()
+  }, 1000);
+});
+
+refs.stopBtnEl.addEventListener('click', event => {
+  refs.startBtnEl.disabled = false;
+  refs.stopBtnEl.disabled = true;
+  clearInterval(intervalId);
+});
