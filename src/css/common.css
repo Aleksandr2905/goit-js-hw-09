@@ -16,3 +16,58 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  gap: 5px;
+}
+
+.field {
+  text-align: center;
+  background-color: blue;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.value {
+  font-size: 3em;
+  position: relative;
+  min-width: 60px;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  padding-bottom: 15px;
+  text-align: center;
+  line-height: 1;
+  font-weight: bold;
+  color: rgb(251, 255, 0);
+}
+
+.label {
+  font-size: 2em;
+  position: relative;
+  min-width: 60px;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  padding-bottom: 15px;
+  text-align: center;
+  line-height: 1;
+  font-weight: bold;
+  color: rgb(251, 255, 0);
+}
+
+.value::before,
+.label::before {
+  content: attr;
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: normal;
+}
