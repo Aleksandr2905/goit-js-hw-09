@@ -1,6 +1,7 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 
 const dataInputEl = document.querySelector('#datetime-picker');
@@ -50,6 +51,11 @@ const timer = {
       const ms = this.deadline - Date.now();
 
       if (ms <= 0) {
+        Report.failure(
+        'ATTENTION',
+        '🙁🙁🙁DEADLINE IS OVER🙁🙁🙁',
+        'Ok',
+        );
         this.stop();
 
         return;
