@@ -19,55 +19,56 @@ img {
 
 .timer {
   display: flex;
-  font-size: 20px;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  column-gap: 24px;
 }
 
 .field {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  background-color: blue;
-}
-
-*::before,
-*::after {
-  box-sizing: border-box;
+  margin: 0 10px;
+  background-color: #f6eb16;
+  width: 250px;
+  border-radius: 8px;
 }
 
 .value {
-  font-size: 3em;
-  position: relative;
-  min-width: 60px;
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-  padding-bottom: 15px;
-  text-align: center;
-  line-height: 1;
-  font-weight: bold;
-  color: rgb(251, 255, 0);
+  font-size: 96px;
+  font-weight: 700;
+  color: #005bb5; /* Синій колір, який також присутній на українському прапорі */
 }
 
 .label {
-  font-size: 2em;
-  position: relative;
-  min-width: 60px;
-  margin-left: 0.3em;
-  margin-right: 0.3em;
-  padding-bottom: 15px;
-  text-align: center;
-  line-height: 1;
-  font-weight: bold;
-  color: rgb(251, 255, 0);
+  font-size: 32px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  color: #005bb5;
 }
 
-.value::before,
-.label::before {
-  content: attr;
-  display: block;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  font-size: 1rem;
-  font-weight: normal;
+button[data-start] {
+  background-color: #005bb5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[data-start]:hover {
+  background-color: #003a73;
+}
+
+#datetime-picker {
+  text-align: center;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
