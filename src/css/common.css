@@ -51,7 +51,8 @@ img {
   color: #005bb5;
 }
 
-button[data-start] {
+button[data-start],
+button[data-stop] {
   background-color: #005bb5;
   color: #fff;
   padding: 10px 20px;
