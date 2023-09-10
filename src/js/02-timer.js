@@ -52,8 +52,8 @@ const timer = {
 
       if (ms <= 0) {
         Report.failure(
-        'ATTENTION',
-        '🙁🙁🙁DEADLINE IS OVER🙁🙁🙁',
+        'DEADLINE IS OVER',
+        '',
         'Ok',
         );
         this.stop();
